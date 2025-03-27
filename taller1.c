@@ -2,9 +2,10 @@
 #include <string.h>
 
 int main() {
-    int id, stock, cantidad, opcion, validacion,val,td;
+    int stock, cantidad, opcion, validacion,val,td;
     float precio, total_ganancias = 0;
     char nombre[30];
+    char id[30];
 
     
 
@@ -26,7 +27,8 @@ int main() {
             case 1:
                 // Registro del producto
                 printf("Ingrese el ID del producto: \n");
-                scanf("%d", &id);
+                fflush(stdin);
+                fgets(id, 30, stdin);
     
                 printf("Ingrese el nombre del producto: \n");
                 fflush(stdin);
@@ -112,7 +114,7 @@ int main() {
             case 4:
                 if(validacion==1){
                     printf("\nInformacion del producto:\n");
-                    printf("ID: %d\n", id);
+                    printf("ID: %s\n", id);
                     printf("Nombre: %s", nombre);
                     printf("Stock disponible: %d\n", stock);
                     printf("Precio unitario: %.2f\n", precio);
