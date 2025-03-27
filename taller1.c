@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main() {
-    int id, stock, cantidad, opcion, validacion,val;
+    int id, stock, cantidad, opcion, validacion,val,td;
     float precio, total_ganancias = 0;
     char nombre[30];
 
@@ -80,6 +80,12 @@ int main() {
                     }else{
                         stock-=cantidad;
                         total_ganancias += cantidad * precio;
+                        td=total_ganancias*0.3;
+                        if(cantidad>=30){
+                            total_ganancias -=td;
+
+                        }
+                        
                     } 
                 }else{
                     printf("Primero tiene que registrar un producto\n");
